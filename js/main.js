@@ -185,12 +185,20 @@ if (lightbox) {
 
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
-      <div id="lightbox" class="lightbox open" role="dialog" aria-label="Збільшена фотографія">
-    <div class="lightbox-inner">
-      <div class="lightbox-img" style="min-width: 280px; min-height: 200px;"></div>
-    </div>
-    <button class="lightbox-close" aria-label="Закрити">✕</button>
-  </div>
+           const realImg = item.querySelector('img');
+      const ph      = item.querySelector('.photo-placeholder');
+
+      if (realImg) {
+        const img = document.createElement('img');
+        img.src   = realImg.src;
+        img.alt   = realImg.alt;
+        img.style.cssText = 'max-width:90vw; max-height:85vh; border-radius:12px; display:block;';
+        lightboxImg.innerHTML = '';
+        lightboxImg.appendChild(img);
+      } else if (ph) {
+        lightboxImg.innerHTML = ph.outerHTML;
+        lightboxImg.style.cssText = 'min-width:280px; min-height:200px;';
+      }
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
