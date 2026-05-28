@@ -705,6 +705,9 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.85; }
   max-width: 90vw;
   max-height: 90vh;
   position: relative;
+   display: flex;
+   align-items: center;
+   justify-items: center;
 }
 .lightbox-close {
   position: fixed;
