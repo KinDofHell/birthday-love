@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наша Історія — Для тебе</title>
+  <meta name="description" content="Розділи нашої спільної книги — від першої зустрічі до сьогодні.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Extra story-specific bits */
+    .story-intro {
+      background: var(--white);
+      padding: 4rem 0;
+    }
+    .story-intro-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .story-intro-inner p { margin-top: 1rem; }
+
+    .chapter-content { }
+    .chapter-list {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .chapter-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      color: var(--text-mid);
+      font-size: .95rem;
+    }
+    .chapter-list li::before {
+      content: '🌸';
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    /* Timeline end ornament */
+    .timeline-end {
+      text-align: center;
+      padding: 3rem 0 1rem;
+      position: relative;
+    }
+    .timeline-end::before {
+      content: '';
+      position: absolute;
+      bottom: calc(100% - 3rem);
+      left: 1.25rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 0 6px var(--pink-pale);
+    }
+    .timeline-end-icon {
+      font-size: 3rem;
+      display: inline-block;
+      animation: heartFloat 2s ease-in-out infinite;
+    }
+    .timeline-end-text {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--text-mid);
+      margin-top: .75rem;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-end::before {
+        left: calc(50% - 8px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" role="navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🌸</span>
+        Для тебе
+      </a>
+      <div class="nav-links">
+        <a href="index.html"   class="nav-link">Головна</a>
+        <a href="gallery.html" class="nav-link">Галерея</a>
+        <a href="story.html"   class="nav-link">Наша Історія</a>
+        <a href="wishes.html"  class="nav-link">Привітання</a>
+      </div>
+      <button class="nav-toggle" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html"   class="nav-link">Головна</a>
+    <a href="gallery.html" class="nav-link">Галерея</a>
+    <a href="story.html"   class="nav-link">Наша Історія</a>
+    <a href="wishes.html"  class="nav-link">Привітання</a>
+  </div>
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="label page-hero-label">💚 Розділи нашої книги</span>
+        <h1 class="page-hero-title">Наша Історія</h1>
+        <p class="page-hero-sub">Від першого слова — до сьогоднішньої сторінки</p>
+      </div>
+    </section>
+
+    <!-- Intro quote -->
+    <section class="story-intro">
+      <div class="container">
+        <div class="story-intro-inner reveal">
+          <h2>Кожен розділ — особливий</h2>
+          <p>
+            Деякі стосунки — як хороша книга: з кожною сторінкою стає цікавіше, тепліше і рідніше. Нижче — наші розділи.
+          </p>
+          <div class="divider"><span class="divider-icon">❀</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TIMELINE ===================== -->
+    <section class="section story-section">
+      <div class="container">
+        <div class="timeline">
+
+          <!-- Chapter 1 -->
+          <article class="chapter reveal" aria-label="Розділ 1">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Осінь 2024</span>
+                <span class="chapter-number">Розділ I</span>
+              </div>
+              <h3 class="chapter-title">Перша зустріч</h3>
+              <p class="chapter-body">
+                Зустріч із тобою - омріяний момент, заради якого дивишся на своє минуле і кажеш: "як добре, що все сталося саме так". Твоя краса приголомшила мене, твій голос змусив мене закохатися ще раз відразу після того, як я закохався у твою вроду.
+              </p>
+              <blockquote class="chapter-quote">
+                "Боже... яка ж вона гарна", - подумав я
+              </blockquote>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/2.jpg" alt="">
+            </div>
+          </article>
+
+          <!-- Chapter 2 -->
+          <article class="chapter reveal" aria-label="Розділ 2">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Осінь 2024</span>
+                <span class="chapter-number">Розділ II</span>
+              </div>
+              <h3 class="chapter-title">Перша подорож</h3>
+              <p class="chapter-body">
+                Висновок один - з коханою людиною хоч на край світу. Саме тому ми дуже скоро опинилися у Коростені) Цей день був найкращим, бо з тобою.
+              </p>
+              <ul class="chapter-list">
+                <li>Ми гуляли парком</li>
+                <li>Ми їли у самому центрі міста</li>
+                <li>Ми разом відчули усю "красу" вечірнього вокзалу</li>
+              </ul>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/3.jpg" alt="">
+            </div>
+          </article>
+
+          <!-- Chapter 3 -->
+          <article class="chapter reveal" aria-label="Розділ 3">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Зима 2024</span>
+                <span class="chapter-number">Розділ III</span>
+              </div>
+              <h3 class="chapter-title">Коли ти вперше привітала мене з ДН</h3>
+              <p class="chapter-body">
+                Важко описати, наскільки піднесеним я тоді був і які приємні емоції в мені вирували. За все життя мене вітало багато людей, однак твоє привітання змусило посміхнутися, видихнути і сказати собі:
+              </p>
+              <blockquote class="chapter-quote">
+                "Мене привітала моя кохана..."
+              </blockquote>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/4.jpg" alt="">
+            </div>
+          </article>
+
+          <!-- Chapter 4 -->
+          <article class="chapter reveal" aria-label="Розділ 4">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Весна 2024</span>
+                <span class="chapter-number">Розділ IV</span>
+              </div>
+              <h3 class="chapter-title">Твій перший день народження разом</h3>
+              <p class="chapter-body">
+                Накупалися у басейні, нашукалися де поїсти у Житомирі після 21:00 і наїлися чипсів. Ще за цей час я зрозумів:
+              </p>
+              <ul class="chapter-list">
+                <li>Ти неймовірна у купальнику</li>
+                <li>З тобою будь-яка діяльність приносить задоволення</li>
+              </ul>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/5.jpg" alt="">
+            </div>
+          </article>
+
+          <!-- Chapter 5 -->
+          <article class="chapter reveal" aria-label="Розділ 5">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Осінь 2025</span>
+                <span class="chapter-number">Розділ V</span>
+              </div>
+              <h3 class="chapter-title">З'їхалися жити разом</h3>
+              <p class="chapter-body">
+                Наш спільний, відповідальний та дорослий момент, після якого розкрилися справжні особливості наших стосунків. Тепер ми бачимося щодня, обіймаємося щодня та цілуємо, коли цього цього хочеться, а не коли вийде зустрітися.
+                Ніхто не заважає нам робити дорослі і не дуже речі). А найголовніше те, що я кожен момент з тобою, нехай це свято чи просто смішний мем, який ти кличеш мені показати. Обожнюю тебе!
+              </p>
+              <blockquote class="chapter-quote">
+                "Мрія уього мого життя - бути з тобою не тільки в моменті, а бути усі моменти з тобою."
+              </blockquote>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/6.jpg" alt="">
+            </div>
+          </article>
+
+          <article class="chapter reveal" aria-label="Розділ 6">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Зима 2025-2026</span>
+                <span class="chapter-number">Розділ VI</span>
+              </div>
+              <h3 class="chapter-title">Перший Новий рік разом</h3>
+              <p class="chapter-body">
+                Перший Новий рік разом - одне з великої кількості свят, яке ми провели і проведемо разом, однак на завжди у ньому залишаться ті теплі спогади підготовки, покупок та накривання столу. Перегляд смішних і не дуже мюзиклів та привітання усіх знайомих зі святом.
+              </p>
+              <blockquote class="chapter-quote">
+                "З Новим роком, кохана!"
+              </blockquote>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/7.jpg" alt="">
+            </div>
+          </article>
+
+          <article class="chapter reveal" aria-label="Розділ 7">
+            <div class="chapter-content">
+              <div class="chapter-meta">
+                <span class="chapter-date">Весна 2026</span>
+                <span class="chapter-number">Розділ VII</span>
+              </div>
+              <h3 class="chapter-title">Сьогодення</h3>
+              <p class="chapter-body">
+                Наша історія з тобою буде лиш рости, наповнюватися сторінками приємних моментів, спільних подій та кохання, що вируватиме та палатиме між нами завжди. З ДНЕМ НАРОДЖЕННЯ, СОНЦЕ МОЄ!
+              </p>
+              <blockquote class="chapter-quote">
+                "Усього тобі най-най!"
+              </blockquote>
+            </div>
+            <div class="chapter-photo">
+              <img src="./images/8.jpg" alt="">
+            </div>
+          </article>
+
+          <!-- Timeline end ornament -->
+          <div class="timeline-end">
+            <div class="timeline-end-icon">💖</div>
+            <p class="timeline-end-text">Далі буде…</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm" style="background:var(--white); text-align:center;">
+      <div class="container reveal">
+        <p class="subtitle" style="margin-bottom:1.5rem;">Хочеш прочитати привітання?</p>
+        <a href="wishes.html" class="btn btn-primary">Відкрити лист &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-brand">З любов'ю 🌸</div>
+    <div class="footer-links">
+      <a href="index.html"   class="footer-link">Головна</a>
+      <a href="gallery.html" class="footer-link">Галерея</a>
+      <a href="story.html"   class="footer-link">Наша Історія</a>
+      <a href="wishes.html"  class="footer-link">Привітання</a>
+    </div>
+    <p class="footer-copy">Зроблено з ❤️ спеціально для тебе</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
