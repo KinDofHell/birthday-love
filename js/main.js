@@ -185,11 +185,12 @@ if (lightbox) {
 
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
-      const ph = item.querySelector('.photo-placeholder');
-      /* When user adds real <img> tags, swap src; for now show placeholder */
-      lightboxImg.innerHTML = ph ? ph.outerHTML : '';
-      lightboxImg.style.minWidth  = '280px';
-      lightboxImg.style.minHeight = '200px';
+      <div id="lightbox" class="lightbox open" role="dialog" aria-label="Збільшена фотографія">
+    <div class="lightbox-inner">
+      <div class="lightbox-img" style="min-width: 280px; min-height: 200px;"></div>
+    </div>
+    <button class="lightbox-close" aria-label="Закрити">✕</button>
+  </div>
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
