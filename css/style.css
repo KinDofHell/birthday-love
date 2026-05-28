@@ -665,13 +665,12 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.85; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(61,43,31,.65) 0%, transparent 55%);
-  opacity: 0;
+  opacity: 1;
   transition: opacity .3s var(--ease);
   display: flex;
   align-items: flex-end;
   padding: 1.25rem;
 }
-.gallery-item:hover .gallery-item-overlay { opacity: 1; }
 
 .gallery-caption {
   color: var(--white);
