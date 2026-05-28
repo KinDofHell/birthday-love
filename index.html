@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>З Днем Народження, кохана!</title>
+  <meta name="description" content="Спеціальна сторінка на честь твого особливого дня.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" role="navigation" aria-label="Головна навігація">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="На головну">
+        <span class="nav-logo-icon">🌸</span>
+        Для тебе
+      </a>
+
+      <div class="nav-links" role="list">
+        <a href="index.html"   class="nav-link" role="listitem">Головна</a>
+        <a href="gallery.html" class="nav-link" role="listitem">Галерея</a>
+        <a href="story.html"   class="nav-link" role="listitem">Наша Історія</a>
+        <a href="wishes.html"  class="nav-link" role="listitem">Привітання</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile fullscreen menu -->
+  <div class="nav-mobile" role="dialog" aria-label="Мобільне меню">
+    <a href="index.html"   class="nav-link">Головна</a>
+    <a href="gallery.html" class="nav-link">Галерея</a>
+    <a href="story.html"   class="nav-link">Наша Історія</a>
+    <a href="wishes.html"  class="nav-link">Привітання</a>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-label="Привітання">
+      <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+      <!-- Decorative blobs -->
+      <div class="blob blob-pink"     style="top:-80px; left:-80px;"  aria-hidden="true"></div>
+      <div class="blob blob-lavender" style="bottom:-60px; right:-60px;" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span>🌷</span>
+          <span>Особливий день</span>
+        </div>
+
+        <h1 class="hero-title">
+          З Днем
+          <span class="accent typewriter" data-text="Народження!">Народження!</span>
+        </h1>
+
+        <p class="hero-sub">
+          Моя найкраща, найніжніша, найулюбленіша —<br>
+          ця сторінка лише для тебе. 💕
+        </p>
+
+        <div class="hero-actions">
+          <a href="wishes.html" class="btn btn-primary">
+            Читати привітання &rarr;
+          </a>
+          <a href="gallery.html" class="btn btn-ghost">
+            Наша галерея
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>далі</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="section intro" aria-label="Про нас">
+      <div class="container">
+        <div class="intro-grid">
+
+          <div class="intro-text reveal">
+            <span class="intro-badge">🌸 Ми</span>
+            <h2 class="intro-title">Ти — найкраще, що трапилось у моєму житті</h2>
+            <div class="intro-body">
+              <p>
+                Твоя присутність мене надихає, заряджає позитивом та впевнено веде у майбутнє, яке я бачу лише з тобою. З моменту нашої зустрічі ти викликаєш у мене бажання кохати, підтримувати та бути перед тобою: захищати тебе, чи вести за собою у кожній пригоді!
+              </p>
+              <br>
+              <p>
+                Наша пов'язаність спричиняє у мене ейфорію - коли кайфуєш лише від того, що тобі добре, коли ти здорова та у гарному настрої. Бажаю тобі миру, щастя та впевненості у всіх своїх рішеннях. Наша спорідненість працює для мене як щит - коли погано, то ти завжди підтримаєш та пригорнеш. Бажаю легкого та швидкого вирішення усіх проблем!
+              </p>
+            </div>
+            <a href="story.html" class="btn btn-ghost">Наша Історія &rarr;</a>
+          </div>
+
+          <div class="intro-photo reveal reveal-delay-2">
+            <div class="intro-photo-deco" aria-hidden="true">🌺</div>
+            <div class="photo-frame float-anim">
+              <img src="./images/1.jpg" alt="" class="photo-placeholder ph-bloom" style="object-fit: cover">
+              <div class="frame-badge">
+                <span class="num">Романтика</span>
+                <span class="txt">разом</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PREVIEW CARDS ===================== -->
+    <section class="section preview-section" aria-label="Розділи сайту">
+      <div class="container">
+
+        <div class="text-center reveal" style="margin-bottom:3rem;">
+          <span class="label">Розділи</span>
+          <h2 style="margin-top:.5rem;">Все для тебе</h2>
+          <p class="subtitle" style="margin-top:.75rem;">Кожна сторінка — маленький подарунок</p>
+        </div>
+
+        <div class="preview-grid">
+
+          <a href="gallery.html" class="preview-card reveal reveal-delay-1">
+            <div class="preview-card-img">
+              <div class="photo-placeholder ph-pink">
+                <span class="photo-icon">🖼</span>
+              </div>
+            </div>
+            <div class="preview-card-body">
+              <span class="preview-card-tag">📸 Галерея</span>
+              <div class="preview-card-title">Наші фотографії</div>
+              <p class="preview-card-desc">Моменти, які завжди хочеться пам'ятати.</p>
+              <div class="preview-card-arrow">Переглянути <span>→</span></div>
+            </div>
+          </a>
+
+          <a href="story.html" class="preview-card reveal reveal-delay-2">
+            <div class="preview-card-img">
+              <div class="photo-placeholder ph-sage">
+                <span class="photo-icon">📖</span>
+              </div>
+            </div>
+            <div class="preview-card-body">
+              <span class="preview-card-tag">💚 Наша Історія</span>
+              <div class="preview-card-title">Розділи нашої книги</div>
+              <p class="preview-card-desc">Від першої зустрічі до сьогоднішнього дня.</p>
+              <div class="preview-card-arrow">Читати <span>→</span></div>
+            </div>
+          </a>
+
+          <a href="wishes.html" class="preview-card reveal reveal-delay-3">
+            <div class="preview-card-img">
+              <div class="photo-placeholder ph-lavender">
+                <span class="photo-icon">💌</span>
+              </div>
+            </div>
+            <div class="preview-card-body">
+              <span class="preview-card-tag">💜 Привітання</span>
+              <div class="preview-card-title">Лист для тебе</div>
+              <p class="preview-card-desc">Слова, які я хотів сказати тобі сьогодні.</p>
+              <div class="preview-card-arrow">Відкрити <span>→</span></div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-brand">З любов'ю 🌸</div>
+    <div class="footer-links">
+      <a href="index.html"   class="footer-link">Головна</a>
+      <a href="gallery.html" class="footer-link">Галерея</a>
+      <a href="story.html"   class="footer-link">Наша Історія</a>
+      <a href="wishes.html"  class="footer-link">Привітання</a>
+    </div>
+    <p class="footer-copy">Зроблено з ❤️ спеціально для тебе</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

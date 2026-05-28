@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Привітання — Для тебе</title>
+  <meta name="description" content="Особливий лист на день народження.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Confetti pop on load */
+    .confetti-piece {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      animation: confettiFall linear forwards;
+      pointer-events: none;
+      z-index: 300;
+    }
+    @keyframes confettiFall {
+      0%   { transform: translateY(0) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Extra letter styles */
+    .letter-opener {
+      background: linear-gradient(135deg, var(--pink-mist) 0%, var(--lavender-light) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .letter-opener-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: .5rem;
+    }
+    .letter-opener-sub {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-mid);
+    }
+
+    .section-title-sm {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .promise-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin: 1rem 0;
+    }
+    .promise-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .85rem 1.1rem;
+      background: var(--sage-light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--green-light, #b8edd4);
+      font-size: .95rem;
+      color: var(--text-mid);
+    }
+    .promise-item::before {
+      content: '✓';
+      font-weight: 700;
+      color: var(--sage);
+      font-size: 1rem;
+      min-width: 1.2rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--pink-pale) 0%, var(--lavender-light) 100%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .highlight-box p {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+    }
+    .highlight-box .big-num {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--pink);
+      display: block;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .highlight-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--pink);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .75rem;
+      color: var(--text-light);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-top: .25rem;
+    }
+
+    /* Floating hearts background */
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .fh {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0;
+      animation: fhFloat linear infinite;
+    }
+    @keyframes fhFloat {
+      0%   { opacity: 0; transform: translateY(100vh) scale(.5); }
+      10%  { opacity: .3; }
+      90%  { opacity: .2; }
+      100% { opacity: 0; transform: translateY(-20vh) scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts (decorative) -->
+  <div class="floating-hearts" aria-hidden="true" id="floatingHearts"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" role="navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">🌸</span>
+        Для тебе
+      </a>
+      <div class="nav-links">
+        <a href="index.html"   class="nav-link">Головна</a>
+        <a href="gallery.html" class="nav-link">Галерея</a>
+        <a href="story.html"   class="nav-link">Наша Історія</a>
+        <a href="wishes.html"  class="nav-link">Привітання</a>
+      </div>
+      <button class="nav-toggle" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html"   class="nav-link">Головна</a>
+    <a href="gallery.html" class="nav-link">Галерея</a>
+    <a href="story.html"   class="nav-link">Наша Історія</a>
+    <a href="wishes.html"  class="nav-link">Привітання</a>
+  </div>
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero" style="background: linear-gradient(160deg, var(--pink-mist) 0%, var(--lavender-light) 100%);">
+      <div class="container">
+        <span class="label page-hero-label">💌 Тільки для тебе</span>
+        <h1 class="page-hero-title">Привітання</h1>
+        <p class="page-hero-sub">Слова, що йдуть від серця</p>
+      </div>
+    </section>
+
+    <!-- ===================== LETTER ===================== -->
+    <section class="section letter-section" style="position:relative;">
+      <div class="container">
+        <div class="letter-wrap">
+
+          <div class="letter-card reveal">
+
+            <!-- Opening banner -->
+            <div class="letter-opener">
+              <div class="letter-opener-title">🎂 З Днем Народження!</div>
+              <div class="letter-opener-sub">Сьогодні — твій особливий день</div>
+            </div>
+
+            <!-- Date -->
+            <p class="letter-date">29 травня 2026 р.</p>
+
+            <!-- Salutation -->
+            <p class="letter-salutation">
+              Моя кохана Оля,
+            </p>
+
+            <!-- Letter body -->
+            <div class="letter-body">
+
+              <p>
+                Бажаю лише тепла, затишку та здоров'я, рішучості і підтримки, за допомогою яких ти здатна звершувати будь-що! Ти як ніхто інший заслуговуєш лише на найкраще, бо приносиш мені та важливим для тебе людям - теж тільки найкраще.
+              </p>
+
+              <p>
+                Я захоплююся твоїм бажанням робити те, що тобі подобається, твоїм сміхом, спокоєм та збудженням. Кожен момент з тобою унікальний та назавжди у пам'яті.
+              </p>
+
+              <!-- Stats block -->
+              <div class="highlight-box reveal reveal-delay-1">
+                <div class="highlight-stats">
+                  <div class="stat">
+                    <span class="stat-num">∞</span>
+                    <span class="stat-label">причин кохати</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-num">6 млрд </span>
+                    <span class="stat-label">думок про тебе щосекунди</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-num">1</span>
+                    <span class="stat-label">єдина така людина</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wishes list -->
+              <p class="section-title-sm">🌸 Мої побажання тобі:</p>
+              <div class="wishes-list">
+
+                <div class="wish-item">
+                  <span class="wish-num">01</span>
+                  <p class="wish-text">
+                    <strong>Здоров'я та сяйво</strong> — щоб твої очі завжди блищали від радості, а серце було легким і вільним.
+                  </p>
+                </div>
+
+                <div class="wish-item">
+                  <span class="wish-num">02</span>
+                  <p class="wish-text">
+                    <strong>Мрії що збуваються</strong> — подорожі, відпочинок, здоров'я близьких та рідних.
+                  </p>
+                </div>
+
+                <div class="wish-item">
+                  <span class="wish-num">03</span>
+                  <p class="wish-text">
+                    <strong>Пригоди та відкриття</strong> — нових місць, смаків, емоцій — усього того, від чого серце б'ється швидше.
+                  </p>
+                </div>
+
+                <div class="wish-item">
+                  <span class="wish-num">04</span>
+                  <p class="wish-text">
+                    <strong>Затишок і тепло</strong> — щоб поруч завжди були люди, які розуміють і цінують тебе такою, якою ти є.
+                  </p>
+                </div>
+
+                <div class="wish-item">
+                  <span class="wish-num">05</span>
+                  <p class="wish-text">
+                    <strong>Насолоди від того, що ти робиш</strong> — кайфуй від того, що подобається.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Promises -->
+              <p class="section-title-sm">💚 Мої обіцянки тобі:</p>
+              <div class="promise-list">
+                <div class="promise-item">Завжди бути поруч, коли потрібно</div>
+                <div class="promise-item">Ніколи не переставати здивовувати тебе</div>
+                <div class="promise-item">Любити тебе більше з кожним днем</div>
+              </div>
+
+              <p style="margin-top:2rem;">
+                Вітаю, єдине кохання всього мого життя у всіх можливих чи не можливих мультивсесвітах!
+              </p>
+
+            </div>
+
+            <!-- Signature -->
+            <div class="letter-signature">
+              <div>
+                <p style="font-size:.85rem; color:var(--text-light); margin-bottom:.5rem;">З любов'ю і ніжністю,</p>
+                <div class="signature-name">Ігор 💕</div>
+              </div>
+              <div class="hearts-float signature-hearts">
+                <span class="heart">💗</span>
+                <span class="heart">💝</span>
+                <span class="heart">💖</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Navigation CTA -->
+          <div class="text-center reveal" style="margin-top:2.5rem; padding-bottom:1rem;">
+            <p class="subtitle" style="margin-bottom:1.5rem; font-size:1rem;">Переглянь ще більше спогадів</p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+              <a href="gallery.html" class="btn btn-ghost">📸 Галерея</a>
+              <a href="story.html"   class="btn btn-primary">📖 Наша Історія</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-brand">З любов'ю 🌸</div>
+    <div class="footer-links">
+      <a href="index.html"   class="footer-link">Головна</a>
+      <a href="gallery.html" class="footer-link">Галерея</a>
+      <a href="story.html"   class="footer-link">Наша Історія</a>
+      <a href="wishes.html"  class="footer-link">Привітання</a>
+    </div>
+    <p class="footer-copy">Зроблено з ❤️ спеціально для тебе</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ---- Floating hearts background ---- */
+    const container = document.getElementById('floatingHearts');
+    const hearts = ['💕','💗','💖','🌸','✨','💝','🌷'];
+    for (let i = 0; i < 12; i++) {
+      const el = document.createElement('span');
+      el.className = 'fh';
+      el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      el.style.left     = Math.random() * 100 + 'vw';
+      el.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+      el.style.animationDuration  = (Math.random() * 10 + 8) + 's';
+      el.style.animationDelay     = (Math.random() * 8) + 's';
+      container.appendChild(el);
+    }
+
+    /* ---- Confetti burst on load ---- */
+    const confettiColors = ['#E8748A','#FFB7C5','#B8A9D9','#7BC4A4','#FFD5A8','#FFFFFF'];
+    function burst() {
+      for (let i = 0; i < 50; i++) {
+        const el = document.createElement('div');
+        el.className = 'confetti-piece';
+        el.style.left            = Math.random() * 100 + 'vw';
+        el.style.background      = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        el.style.width           = (Math.random() * 8 + 6) + 'px';
+        el.style.height          = (Math.random() * 8 + 6) + 'px';
+        el.style.borderRadius    = Math.random() > .5 ? '50%' : '2px';
+        el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        el.style.animationDelay  = (Math.random() * 1.5) + 's';
+        document.body.appendChild(el);
+        el.addEventListener('animationend', () => el.remove());
+      }
+    }
+    window.addEventListener('load', () => setTimeout(burst, 400));
+  </script>
+</body>
+</html>
